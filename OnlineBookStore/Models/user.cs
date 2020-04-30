@@ -38,6 +38,7 @@ namespace BookStore.Models
         [StringLength(255)]
         public string email { get; set; }
 
+        [ForeignKey("city")]
         public int city_id { get; set; }
 
         [StringLength(45)]
