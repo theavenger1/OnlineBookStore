@@ -18,6 +18,8 @@ namespace BookStore.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
+        [ForeignKey("user")]
         public int user_id { get; set; }
 
         [StringLength(45)]
