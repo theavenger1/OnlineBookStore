@@ -15,21 +15,19 @@ namespace BookStore.Models
         public int Id { get; set; }
         public int no_of_items { get; set; }
 
+        [ForeignKey("order")]
         public int order_id { get; set; }
-
-        public int? from_hub_id { get; set; }
-
-        public int? to_hub_id { get; set; }
 
         [StringLength(45)]
         public string cost { get; set; }
 
+        [ForeignKey("hub_travel_cost")]
         public int hub_travel_cost_id { get; set; }
 
+        [ForeignKey("hubs_admins")]
         public int admin_id { get; set; }
 
-        public int rate_id1 { get; set; }
-
+        [ForeignKey("book")]
         public int book_id { get; set; }
 
         public virtual book book { get; set; }
@@ -40,6 +38,5 @@ namespace BookStore.Models
 
         public virtual order order { get; set; }
 
-        public virtual rate rate { get; set; }
     }
 }
